@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.Graphics;
 import java.awt.Font;
 import java.awt.Color;
- 
+
 public class Ex1_6_1 extends Frame implements Runnable {
     Font messageFont1;
     Font messageFont2;
@@ -24,9 +24,9 @@ public class Ex1_6_1 extends Frame implements Runnable {
     }
 
     public void run() {
-      messageFont1 = new Font("����", Font.PLAIN, 30);
-      messageFont2 = new Font("�꿬��", Font.PLAIN, 30);
-      message = "�����ַ���";
+      messageFont1 = new Font("锟斤拷锟斤拷", Font.PLAIN, 30);
+      messageFont2 = new Font("锟疥楷锟斤拷", Font.PLAIN, 30);
+      message = "锟斤拷锟斤拷锟街凤拷锟斤拷";
       repaint();
     }
 

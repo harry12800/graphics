@@ -17,15 +17,17 @@ public class App
         String property = System.getProperty("user.dir");
         System.out.println(property);
         
-        File file = new File("D:\\workspace\\java.work\\graphics\\src\\main\\Program");
+        File file = new File("D:\\workspace\\java.work\\graphics\\src\\main\\program");
         FilenameFilter filter = new FilenameFilter() {
 			public boolean accept(File dir, String name) {
-				return name.endsWith(".class");
+				return name.endsWith(".java");
 			}
 		};
 		List<File> traverseDir = FileUtils.traverseDir(file.getAbsolutePath(), filter );
 		for (File file2 : traverseDir) {
-			 file2.delete();
+			String srcByFilePath = FileUtils.getSrcByFilePath(file2, "GBK");
+			System.out.println(srcByFilePath);
+			FileUtils.writeContent(file2.getAbsolutePath(), srcByFilePath, "UTF-8");
 		}
         System.out.println();
     }
