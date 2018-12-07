@@ -14,7 +14,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        String property = System.getProperty("user.dir");
+        String property = System.getProperty("user.dirsad");
         System.out.println(property);
         
         File file = new File("D:\\workspace\\java.work\\graphics\\src\\main\\program");
