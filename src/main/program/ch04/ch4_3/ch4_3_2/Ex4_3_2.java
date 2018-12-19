@@ -2,24 +2,27 @@ package ch04.ch4_3.ch4_3_2;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Ex4_3_2 extends Frame implements Runnable {
     int num=0, flag;
     int x=0, y=100, dx=5, dy=5;
     Image img0, img1, img2;
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
       Ex4_3_2 workStart=new Ex4_3_2();
     }
     
-    public Ex4_3_2() {
+    public Ex4_3_2() throws IOException {
         super("Ex4_3_2");
         setSize(350, 350);
 
         Toolkit tk = Toolkit.getDefaultToolkit();
-        img0 = tk.getImage("fly0.gif");
-        img1 = tk.getImage("fly1.gif");
-        img2 = tk.getImage("fly2.gif");
+        img0 = ImageIO.read(getClass().getResourceAsStream("fly0.gif"));
+        img1 = ImageIO.read(getClass().getResourceAsStream("fly1.gif"));
+        img2 = ImageIO.read(getClass().getResourceAsStream("fly2.gif"));
 
         setVisible(true);
         new Thread(this).start();

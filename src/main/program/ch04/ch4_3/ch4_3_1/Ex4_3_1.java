@@ -2,6 +2,10 @@ package ch04.ch4_3.ch4_3_1;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 import java.awt.Graphics;
 
 public class Ex4_3_1 extends Frame implements Runnable {
@@ -9,16 +13,16 @@ public class Ex4_3_1 extends Frame implements Runnable {
     int dx=5, dy=5;
     Image img;
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
       Ex4_3_1 workStart=new Ex4_3_1();
     }
     
-    public Ex4_3_1() {
+    public Ex4_3_1() throws IOException {
       super("Ex4_3_1");
       setSize(350, 350);
 
       Toolkit tk = Toolkit.getDefaultToolkit();
-      img = tk.getImage("fly.gif");
+      img = ImageIO.read(getClass().getResourceAsStream("fly.gif"));
 
       setVisible(true);
       new Thread(this).start();
